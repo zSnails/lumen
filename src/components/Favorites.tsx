@@ -1,14 +1,6 @@
 import { useFavoritesStore, type Favorite } from "../store/favoritesStore";
 import { useFavoriteModal } from "./AddFavoriteModal";
 
-const defaultFavorites: Favorite[] = Array.from({ length: 6 }, (_, _idx) => {
-    return {
-        id: crypto.randomUUID(),
-        title: "YouTube",
-        href: "https://youtube.com"
-    } satisfies Favorite;
-});
-
 export function Favorites() {
     const { favorites } = useFavoritesStore();
     return <div className="grid grid-cols-4 gap-4">
