@@ -29,7 +29,7 @@ export function AddFavoriteElement() {
 
 export function FavoriteElement({ title, href }: FavoriteElementProps) {
     return <div className="flex items-center flex-col gap-2 w-fit mx-auto">
-        <a className="flex active:bg-cyan-900/70 hover:bg-card hover:-translate-y-1 transition-all duration-300 items-center justify-center border border-border w-40 h-40 bg-card/50 aspect-square rounded-4xl" href={href}>
+        <a target="_blank" className="flex active:bg-cyan-900/70 hover:bg-card hover:-translate-y-1 transition-all duration-300 items-center justify-center border border-border w-40 h-40 bg-card/50 aspect-square rounded-4xl" href={href}>
             <i className="text-center">
                 {title}
             </i>
