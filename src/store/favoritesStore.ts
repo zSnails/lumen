@@ -15,7 +15,7 @@ export type FavoritesStoreState = {
 };
 
 export const useFavoritesStore = create<FavoritesStoreState>()(
-    persist((set, _) => ({
+    persist(set => ({
         favorites: [],
         addFavorite: (favorite: Favorite) => {
             set(s => ({ favorites: [...s.favorites, favorite] }));
