@@ -49,11 +49,11 @@ export function AddFavoriteModalProvider({ children }: ComponentProps<"div">) {
                 <form className="w-full flex flex-col gap-4" onSubmit={form.handleSubmit(handleSubmit)} >
                     <div className="flex flex-col gap-2">
                         <label htmlFor="title">Title</label>
-                        <Input id="title" placeholder="Reddit" {...form.register("title", { required: true })} />
+                        <Input required id="title" placeholder="Reddit" {...form.register("title", { required: true })} />
                     </div>
                     <div className="flex flex-col gap-2">
                         <label htmlFor="href">URL</label>
-                        <Input id="href" placeholder="https://reddit.com" {...form.register("href", { required: true })} />
+                        <Input required id="href" placeholder="https://reddit.com" {...form.register("href", { required: true })} />
                     </div>
                     <div className="w-full items-center justify-end flex flex-row gap-2">
                         <button type="reset" onClick={() => close()} className="py-3 px-5 hover:bg-red-500 hover:cursor-pointer active:bg-red-700 hover:-translate-y-1 transition-all duration-300 bg-red-500/50 rounded-2xl">Cancel</button>
