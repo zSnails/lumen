@@ -18,6 +18,7 @@ export function SearchBar() {
             }`}>
             <Search />
             <input
+                required
                 ref={query}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
