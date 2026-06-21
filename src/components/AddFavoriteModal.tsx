@@ -37,7 +37,7 @@ export function AddFavoriteModalProvider({ children }: ComponentProps<"div">) {
     const handleSubmit = useCallback((values: FormValues) => {
         addFavorite({ id: crypto.randomUUID(), ...values });
         close();
-    }, [addFavorite]);
+    }, [addFavorite, close]);
 
     return <FavoriteModalContext.Provider value={{
         isOpen,
