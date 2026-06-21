@@ -1,7 +1,6 @@
-import { useCallback, useRef, useState } from "react"
+import { useCallback, useRef } from "react"
 
 export function SearchBar() {
-    const [focused, setFocused] = useState<boolean>(false);
     const query = useRef<HTMLInputElement | null>(null);
 
     const handleSubmit = useCallback(() => {
@@ -12,16 +11,11 @@ export function SearchBar() {
         e.preventDefault();
         handleSubmit();
     }}>
-        <div className={`w-full group flex items-center gap-3 px-5 py-3.5 border rounded-full bg-card/50 backdrop-blur-xl transition-all duration-300 ${focused
-            ? "border-cyan-400/60"
-            : "border-border hover:border-border/80"
-            }`}>
+        <div className={`w-full border-border focus-within:border-cyan-400 group flex items-center gap-3 px-5 py-3.5 border rounded-full bg-card/50 backdrop-blur-xl transition-all duration-300`}>
             <Search />
             <input
                 required
                 ref={query}
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
                 placeholder="Search or type an URL to begin"
                 inputMode="search"
                 autoComplete="off"
