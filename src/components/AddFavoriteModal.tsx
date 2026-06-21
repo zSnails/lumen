@@ -39,6 +39,8 @@ export function AddFavoriteModalProvider({ children }: ComponentProps<"div">) {
         close();
     }, [addFavorite, close]);
 
+    const inputCls = "transition-all duration-300 focus:border-cyan-400 border border-border rounded-full px-5 py-3.5";
+
     return <FavoriteModalContext.Provider value={{
         isOpen,
         open,
@@ -49,7 +51,7 @@ export function AddFavoriteModalProvider({ children }: ComponentProps<"div">) {
                 <form className="w-full flex flex-col gap-4" onSubmit={form.handleSubmit(handleSubmit)} >
                     <div className="flex flex-col gap-2">
                         <label htmlFor="title">Title</label>
-                        <Input required id="title" placeholder="Reddit" {...form.register("title", { required: true })} />
+                        <Input inputMode="text" type="text" className={inputCls} required id="title" placeholder="Reddit" {...form.register("title", { required: true })} />
                     </div>
                     <div className="flex flex-col gap-2">
                         <label htmlFor="href">URL</label>
