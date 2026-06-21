@@ -56,7 +56,8 @@ export function AddFavoriteModalProvider({ children }: ComponentProps<"div">) {
                         <Input id="href" placeholder="https://reddit.com" {...form.register("href", { required: true })} />
                     </div>
                     <div className="w-full items-center justify-end flex flex-row gap-2">
-                        <button type="submit" className="py-3 px-5 hover:bg-card/90 hover:cursor-pointer active:translate-y-0 active:bg-cyan-400 active:text-night hover:-translate-y-1 transition-all duration-300 bg-card/50 rounded-2xl">Done</button>
+                        <button type="reset" onClick={() => close()} className="py-3 px-5 hover:bg-red-500 hover:cursor-pointer active:bg-red-700 hover:-translate-y-1 transition-all duration-300 bg-red-500/50 rounded-2xl">Cancel</button>
+                        <button type="submit" className="py-3 px-5 hover:bg-card/90 hover:cursor-pointer active:translate-y-0 active:bg-cyan-400 active:text-night hover:-translate-y-1 transition-all duration-300 bg-card/50 rounded-2xl">Add</button>
                     </div>
                 </form>
             </div>
