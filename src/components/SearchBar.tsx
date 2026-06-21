@@ -1,4 +1,5 @@
 import { useCallback, useRef } from "react"
+import { Input } from "./AddFavoriteModal";
 
 export function SearchBar() {
     const query = useRef<HTMLInputElement | null>(null);
@@ -13,13 +14,12 @@ export function SearchBar() {
     }}>
         <div className={`w-full border-border focus-within:border-cyan-400 group flex items-center gap-3 px-5 py-3.5 border rounded-full bg-card/50 backdrop-blur-xl transition-all duration-300`}>
             <Search />
-            <input
+            <Input
                 required
                 ref={query}
                 placeholder="Search or type an URL to begin"
                 inputMode="search"
                 autoComplete="off"
-                className="w-full text-base text-bone bg-transparent focus:outline-none placeholder:text-muted-foreground/70"
             />
             <button type="submit" className="bg-cyan-400 rounded-full p-2 text-night hover:bg-cyan-500 hover:text-bone hover:-translate-y-1 transition-all transition-300 hover:cursor-pointer">
                 <ArrowUpRight />
