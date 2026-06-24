@@ -1,13 +1,5 @@
 import { useEffect, useState } from "react";
 
-declare class Temporal {
-    static Now: {
-        plainTimeISO(): {
-            toLocaleString(): string;
-        };
-    };
-}
-
 function getTime(): string {
     return Temporal.Now.plainTimeISO().toLocaleString();
 }
