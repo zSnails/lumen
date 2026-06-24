@@ -24,13 +24,13 @@ export function AddFavoriteModalProvider({ children }: ComponentProps<"div">) {
 
     const form = useForm<FormValues>();
 
-    const open = () => {
+    const open = useCallback(() => {
         dialog.current?.showModal();
-    }
-    const close = () => {
+    }, []);
+    const close = useCallback(() => {
         dialog.current?.close();
         form.reset();
-    }
+    }, [form]);
 
     const { addFavorite } = useFavoritesStore();
 
